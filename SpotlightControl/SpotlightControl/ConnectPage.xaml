@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SpotlightControl.ConnectPage" Background="LightGoldenRodYellow" Title="Connect to Server">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="Center" VerticalOptions="Start" Margin="0, 40, 0, 0">
+            <Label Text="CONNECT" Margin="20" HorizontalTextAlignment="Center" FontSize="32" FontAttributes="Bold" TextColor="Gold"/>
+            <Frame CornerRadius="10" Padding="20" Background="Gray" HorizontalOptions="Center" VerticalOptions="Center">
+                <StackLayout>
+                    <StackLayout.Resources>
+                        <Style TargetType="StackLayout">
+                            <Setter Property="HorizontalOptions" Value="Center"/>
+                            <Setter Property="VerticalOptions" Value="Center"/>
+                            <Setter Property="Margin" Value="10"/>
+                        </Style>
+                        <Style TargetType="Label">
+                            <Setter Property="VerticalOptions" Value="Center"/>
+                        </Style>
+                    </StackLayout.Resources>
+                    <StackLayout Orientation="Horizontal">
+                        <Label TextColor="Snow" Text="IP:" FontSize="24" WidthRequest="60"/>
+                        <Entry x:Name="IP_Entry" WidthRequest="150" Keyboard="Default" Background="LightGoldenrodYellow"/>
+                    </StackLayout>
+                    <!--<StackLayout Orientation="Horizontal">
+                        <Label TextColor="Snow" Text="Port:" FontSize="24" WidthRequest="60"/>
+                        <Entry x:Name="Port_Entry" WidthRequest="150" Keyboard="Default" Background="LightGoldenrodYellow"/>
+                    </StackLayout>-->
+                    <Button x:Name="Connect_Button" Text="Wait...." Margin="8" CornerRadius="4" Clicked="Connect_Button_Clicked" Background="Lightgray"/>
+                </StackLayout>
+            </Frame>
+            <Image x:Name="Status_Image" Margin="40, 20"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

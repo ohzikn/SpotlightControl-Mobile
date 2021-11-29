@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SpotlightControl.AutoPage" Title="Auto" Background="LightGoldenrodYellow">
+    <ContentPage.Content>
+        <Grid>
+            <RelativeLayout x:Name="MainRelLayout" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <Image x:Name="BackgroundImage" HorizontalOptions="Center"/>
+            </RelativeLayout>
+            <Label Text="AUTO" HorizontalOptions="Center" VerticalOptions="Start" Margin="0, 40, 0, 0" FontSize="24" TextColor="DimGray" FontAttributes="Bold"/>
+            <StackLayout HorizontalOptions="Center" VerticalOptions="Center" Margin="0, 0, 0, 100">
+                <StackLayout.Resources>
+                    <Style TargetType="Button">
+                        <Setter Property="Margin" Value="20"/>
+                        <Setter Property="FontSize" Value="18"/>
+                        <Setter Property="Background" Value="LightSalmon"/>
+                        <Setter Property="TextColor" Value="Snow"/>
+                        <Setter Property="CornerRadius" Value="4"/>
+                    </Style>
+                </StackLayout.Resources>
+                <Button x:Name="BrightenButton" WidthRequest="80" Text="Brighten" Clicked="BrightenButton_Clicked"/>
+                <Button Text="Close" WidthRequest="80"/>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

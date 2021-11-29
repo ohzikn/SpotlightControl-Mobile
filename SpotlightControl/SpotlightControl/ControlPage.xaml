@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SpotlightControl.ControlPage" Title="Spotlight Control">
+    <ContentPage.Content>
+        <Grid>
+            <Grid x:Name="ImageGrid"/>
+            <ScrollView>
+                <StackLayout Margin="0, 0, 0, 0">
+                    <StackLayout.Resources>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="LightSalmon"/>
+                            <Setter Property="CornerRadius" Value="4"/>
+                            <Setter Property="Margin" Value="4"/>
+                            <Setter Property="TextColor" Value="Snow"/>
+                        </Style>
+                    </StackLayout.Resources>
+                    <Label Text="Current Color" FontSize="Title" Margin="8"/>
+                    <Frame x:Name="ColorFrame" HeightRequest="200" BackgroundColor="Blue" Margin="20" CornerRadius="10"/>
+                    <Grid Margin="20">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="60"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="60"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Text="Red" Grid.Column="0" Background="Salmon" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                        <Slider x:Name="R_Slider" Grid.Column="1" ValueChanged="RGB_Slider_ValueChanged"/>
+                        <Entry Text="-" Grid.Column="2" x:Name="R_Entry" Unfocused="R_Entry_Unfocused" Keyboard="Numeric" HorizontalTextAlignment="Center"/>
+                    </Grid>
+                    <Grid Margin="20">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="60"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="60"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Text="Green" Grid.Column="0" Background="Lightgreen"  VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                        <Slider x:Name="G_Slider" Grid.Column="1"  ValueChanged="RGB_Slider_ValueChanged"/>
+                        <Entry Text="-" Grid.Column="2" x:Name="G_Entry" Unfocused="G_Entry_Unfocused" Keyboard="Numeric" HorizontalTextAlignment="Center"/>
+                    </Grid>
+                    <Grid Margin="20">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="60"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="60"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Text="Blue" Grid.Column="0" Background="LightSkyBlue"  VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                        <Slider x:Name="B_Slider" Grid.Column="1"  ValueChanged="RGB_Slider_ValueChanged"/>
+                        <Entry Text="-" Grid.Column="2" x:Name="B_Entry" Unfocused="B_Entry_Unfocused" Keyboard="Numeric" HorizontalTextAlignment="Center"/>
+                    </Grid>
+                    <Grid Margin="20, 0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+                        <Button x:Name="Reset_Button" Grid.Column="0" Text="Reset" Clicked="Reset_Button_Clicked"/>
+                        <Button x:Name="Send_Button" Grid.Column="1" Text="Send Value" Clicked="Send_Button_Clicked"/>
+                    </Grid>
+                    <Frame BorderColor="Black" BackgroundColor="Gray" CornerRadius="10" Margin="10">
+                        <Grid Margin="10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="20"/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Label Text="Preset 1" TextColor="Snow" HorizontalTextAlignment="Center" Grid.Row="0" Grid.Column="0"/>
+                            <Label Text="Preset 2" TextColor="Snow" HorizontalTextAlignment="Center" Grid.Row="0" Grid.Column="1"/>
+                            <Label Text="Preset 3" TextColor="Snow" HorizontalTextAlignment="Center" Grid.Row="0" Grid.Column="2"/>
+                            <Button Text="Save" x:Name="Save1_Button" Grid.Row="1" Grid.Column="0" Clicked="Save1_Button_Clicked"/>
+                            <Button Text="Save" x:Name="Save2_Button" Grid.Row="1" Grid.Column="1" Clicked="Save2_Button_Clicked"/>
+                            <Button Text="Save" x:Name="Save3_Button" Grid.Row="1" Grid.Column="2" Clicked="Save3_Button_Clicked"/>
+                            <Button Text="Load" x:Name="Load1_Button" Grid.Row="2" Grid.Column="0" Clicked="Load1_Button_Clicked"/>
+                            <Button Text="Load" x:Name="Load2_Button" Grid.Row="2" Grid.Column="1" Clicked="Load2_Button_Clicked"/>
+                            <Button Text="Load" x:Name="Load3_Button" Grid.Row="2" Grid.Column="2" Clicked="Load3_Button_Clicked"/>
+                        </Grid>
+                    </Frame>
+                </StackLayout>
+            </ScrollView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

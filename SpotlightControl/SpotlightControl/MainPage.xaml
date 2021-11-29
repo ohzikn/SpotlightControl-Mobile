@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SpotlightControl.MainPage">
+
+    <Grid>
+        <StackLayout Background="dimgray">
+            <!--<Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+                <Label Text="Spotlight" HorizontalTextAlignment="Center" TextColor="White" FontSize="32"/>
+            </Frame>-->
+            <Grid x:Name="MainGrid" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                <Grid.Resources>
+                    <Style TargetType="Image">
+                        <Setter Property="Aspect" Value="AspectFit"/>
+                    </Style>
+                </Grid.Resources>
+                <Grid x:Name="ImageGrid" VerticalOptions="Fill" HorizontalOptions="Fill">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="3*"/>
+                    </Grid.RowDefinitions>
+                </Grid>
+            </Grid>
+            <Button x:Name="Start_Button" Text="Start" Background="Orange" TextColor="White" HeightRequest="40" WidthRequest="80" HorizontalOptions="End" Margin="0, 0, 20, 20" Clicked="Start_Button_Clicked"/>
+        </StackLayout>
+        <Frame WidthRequest="200" VerticalOptions="Start" HorizontalOptions="Start" BackgroundColor="Transparent" Margin="0, 60, 0, 0">
+            <Image x:Name="LogoImage"/>
+        </Frame>
+    </Grid>
+
+</ContentPage>

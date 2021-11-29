@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SpotlightControl.FunctionPage" Title="Main Page">
+    <ContentPage.Content>
+        <Grid x:Name="MainGrid">
+            <Grid x:Name="ImageGrid"/>
+            <StackLayout>
+                <StackLayout.Resources>
+                    <Style TargetType="Grid" x:Key="ButtonGrid">
+                        <Setter Property="Margin" Value="20, 10"/>
+                        <Setter Property="HeightRequest" Value="120"/>
+                    </Style>
+                    <Style TargetType="Image">
+                        <Setter Property="Margin" Value="8"/>
+                        <Setter Property="Aspect" Value="AspectFill"/>
+                        <Setter Property="HorizontalOptions" Value="Center"/>
+                    </Style>
+                    <Style TargetType="Label">
+                        <Setter Property="FontSize" Value="22"/>
+                    </Style>
+                </StackLayout.Resources>
+                <AbsoluteLayout HorizontalOptions="FillAndExpand">
+                    <Label Text="SpotLight" HorizontalOptions="Start" FontSize="Title" Margin="20" AbsoluteLayout.LayoutBounds="0, 0"/>
+                    <Button x:Name="Close_Button" Background="lightgray" WidthRequest="80" CornerRadius="4" Text="Close" HorizontalOptions="End" Margin="8" AbsoluteLayout.LayoutFlags="XProportional" AbsoluteLayout.LayoutBounds="1, 0" Clicked="Close_Button_Clicked"/>
+                </AbsoluteLayout>
+                <ScrollView>
+                    <StackLayout>
+                        <Grid Style="{StaticResource ButtonGrid}" BackgroundColor="LightSteelBlue">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="3*"/>
+                                <ColumnDefinition Width="2*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="Connect Device" Grid.Column="0" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                            <Image x:Name="F1_Image" Grid.Column="1"/>
+                            <Button x:Name="F1_Button" Grid.ColumnSpan="2" BackgroundColor="#00FFFFFF" BorderColor="Gray" BorderWidth="2" Clicked="F1_Button_Clicked"/>
+                        </Grid>
+                        <Grid Style="{StaticResource ButtonGrid}" BackgroundColor="LightGoldenrodYellow">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="3*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="RGB / Light" Grid.Column="1" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                            <Image x:Name="F2_Image" Grid.Column="0"/>
+                            <Button x:Name="F2_Button" Grid.ColumnSpan="2" BackgroundColor="#00FFFFFF" BorderColor="Gray" BorderWidth="2" Clicked="F2_Button_Clicked"/>
+                        </Grid>
+                        <Grid Style="{StaticResource ButtonGrid}" BackgroundColor="#7FF08080">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="3*"/>
+                                <ColumnDefinition Width="2*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="Auto" Grid.Column="0" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                            <Image x:Name="F3_Image" Grid.Column="1"/>
+                            <Button x:Name="F3_Button" Grid.ColumnSpan="2" BackgroundColor="#00FFFFFF" BorderColor="Gray" BorderWidth="2" Clicked="F3_Button_Clicked"/>
+                        </Grid>
+                        <Grid Style="{StaticResource ButtonGrid}" BackgroundColor="#7F9370DB">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="3*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="CCT" Grid.Column="1" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                            <Image x:Name="F4_Image" Grid.Column="0"/>
+                            <Button x:Name="F4_Button" Grid.ColumnSpan="2" BackgroundColor="#00FFFFFF" BorderColor="Gray" BorderWidth="2" Clicked="F4_Button_Clicked"/>
+                        </Grid>
+                    </StackLayout>
+                </ScrollView>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
